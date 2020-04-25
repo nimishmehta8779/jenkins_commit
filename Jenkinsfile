@@ -9,7 +9,7 @@ pipeline {
             steps{
             checkout scm:([
                 $class: 'GitSCM',
-                branches: [[name: 'origin/master']],
+                branches: [[name: '*/master']],
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [
                     [$class: 'CloneOption', timeout: 10, noTags: true, reference: reponame],
