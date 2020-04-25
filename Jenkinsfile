@@ -6,13 +6,10 @@ pipeline {
     }
     stages {
         stage ('checkout all branches'){
-            when {
-                branch 'master'
-            }
             steps{
             checkout([
                 $class: 'GitSCM',
-                branches: [[name: commit]],
+                branches: [[name: master]],
                 doGenerateSubModuleConfigurations: false,
                 extensions: [
                     [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame]
