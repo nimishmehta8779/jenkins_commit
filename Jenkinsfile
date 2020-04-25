@@ -9,6 +9,7 @@ pipeline {
             when {
                 branch 'master'
             }
+            steps{
             checkout([
                 $class: 'GitSCM',
                 branches: [[name: commit]],
@@ -22,6 +23,7 @@ pipeline {
                 [credentialsId: 'nimishmehta8779', url: repourl]
             ]
             ])
+            }
         }
         stage ('validate ') {
                 dir (reponame) {
