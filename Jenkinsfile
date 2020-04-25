@@ -4,9 +4,6 @@ pipeline {
         reponame =  "musician-app"
         repourl = "https://github.com:nimishmehta8779/musician-app.git"
     }
-    parameters {
-    }
-
     stages {
         stage ('checkout all branches'){
             steps{
@@ -23,9 +20,6 @@ pipeline {
                 [credentialsId: 'git', url: repourl]
             ]
             ])
-                dir (reponame) {
-                sh (script: "git rev-parse HEAD")
-            }
         }
     }
 }
