@@ -1,9 +1,9 @@
 pipeline {
-    def reponame =  "oracle-install-scripts"
-    def repourl = "git@github.com/nimishmehta8779/oracle-install-scripts.git"
-    echo "Checking out from reference $commit"
-
     agent any
+    environment {
+        reponame =  "oracle-install-scripts"
+        repourl = "git@github.com/nimishmehta8779/oracle-install-scripts.git"
+    }
     stages {
         stage ('checkout all branches'){
             when {
