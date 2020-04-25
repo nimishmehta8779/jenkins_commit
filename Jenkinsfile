@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         reponame =  "musician-app"
-        repourl = "git@github.com:nimishmehta8779/musician-app.git"
+        repourl = "https://github.com:nimishmehta8779/musician-app.git"
     }
     stages {
         stage ('checkout all branches'){
@@ -17,7 +17,7 @@ pipeline {
                 ],
                 submoduleCfg: [],
                 useRemoteConfigs: [
-                [credentialsId: 'nimishmehta8779/Silicon_123', url: repourl]
+                [url: repourl]
             ]
             ])
                 dir (reponame) {
