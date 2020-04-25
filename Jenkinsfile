@@ -1,10 +1,9 @@
+def reponame =  "musician-app"
+def repourl = "git@github.com:nimishmehta8779/musician-app.git"
+def varsion = "1.0"
+
 pipeline {
     agent any
-    environment {
-        reponame =  "musician-app"
-        repourl = "git@github.com:nimishmehta8779/musician-app.git"
-        varsion = "1.0"
-    }
     stages {
         stage ('creata a directory') {
             steps {
