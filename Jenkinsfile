@@ -12,6 +12,7 @@ pipeline {
                 branches: [[name: 'origin/master']],
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [
+                    [$class: 'CloneOption', timeout: 10, noTags: True, reference: reponame]
                     [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame]
                 ],
                 submoduleCfg: [],
@@ -23,10 +24,13 @@ pipeline {
         }
         stage ('create a tar file') {
             steps {
+                dir(reponame) {
+                    sh(script: "git rev-parse HEAD")
+                }
                 script{
                     sh '''
                      #!/bin/bash
-                     cd musician-app
+                     cd oracle-install-scripts
                      echo $pwd
                     '''
                 }
