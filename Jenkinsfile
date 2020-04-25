@@ -26,9 +26,11 @@ pipeline {
             }
         }
         stage ('validate ') {
+            steps{
                 dir (reponame) {
                 sh (script: "git rev-parse HEAD")
             }
         }
     }
+}
 }   
