@@ -19,7 +19,7 @@ pipeline {
                 ],
                 submoduleCfg: [],
                 useRemoteConfigs: [
-                [credentialsId: 'git', url: repourl]
+                [credentialsId: 'nimishmehta8779', url: repourl]
             ]
             ])
                 dir (reponame) {
