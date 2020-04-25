@@ -27,11 +27,6 @@ pipeline {
                 sh (script: "git rev-parse HEAD")
             }
         }
-        stage ('validate ') {
-            steps{
-                sh (script: "completed")
-            }
-        }
     }
 }
 }
