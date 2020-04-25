@@ -41,7 +41,7 @@ pipeline {
                      #!/bin/bash
                      cd musician-app
                      echo ${version} > version
-                     tar --exclude=.git -cvf ../musician-app${version}${date}.tar . 
+                     tar --exclude=.git -cvf ../musician-app-${version}-${date}.tar . 
                      cd ..
                      ls -l *.tar                    
                     """
