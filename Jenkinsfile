@@ -27,7 +27,7 @@ pipeline {
                      #!/bin/bash
                      cd musician-app
                      echo $pwd
-                    ''''
+                    '''
                 }
             }
         }
