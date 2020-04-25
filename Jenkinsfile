@@ -5,7 +5,7 @@ pipeline {
         repourl = "git@github.com:nimishmehta8779/musician-app.git"
     }
     stages {
-        stages ('creata a directory') {
+        stage ('creata a directory') {
             steps {
                 script {
                     sh "mkdir musician-app"
