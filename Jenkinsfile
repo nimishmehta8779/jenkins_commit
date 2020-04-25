@@ -29,7 +29,7 @@ pipeline {
         }
         stage ('validate ') {
             steps{
-                sh (script: "completed"")
+                sh (script: "completed")
             }
         }
     }
