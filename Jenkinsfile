@@ -3,7 +3,7 @@ def repourl = "git@github.com:nimishmehta8779/musician-app.git"
 def varsion = "1.0"
 
 pipeline {
-    agent { node { label 'linux'}}
+    agent any
     stages {
         stage ('creata a directory') {
             steps {
@@ -39,8 +39,8 @@ pipeline {
                     sh """
                      #!/bin/bash
                      cd musician-app
-                     echo ${version} > version
-                     tar --exclude=.git -cvf ../musician-app${version}.tar . 
+                     echo $version > version
+                     tar --exclude=.git -cvf ../musician-app$version.tar . 
                      cd ..
                      ls -l *.tar                    
                     """
