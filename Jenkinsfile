@@ -37,13 +37,14 @@ pipeline {
         stage ('create a tar file') {
             steps {
                 script{
-                    sh '''
+                    sh """
                      #!/bin/bash
                      cd musician-app
-                     tar --exclude=.git -cvf ../musician-app\"${version}\".tar . 
+                     echo ${version} > version
+                     tar --exclude=.git -cvf ../musician-app${version}.tar . 
                      cd ..
                      ls -l *.tar                    
-                    '''
+                    """
                 }
             }
         }
