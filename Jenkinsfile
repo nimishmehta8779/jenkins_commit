@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     environment {
         reponame =  "musician-app"
         repourl = "git@github.com:nimishmehta8779/musician-app.git"
@@ -15,6 +15,7 @@ pipeline {
         }
         stage ('checkout all branches') {
             steps{
+            agent { label 'master'}
             checkout scm:([
                 $class: 'GitSCM',
                 branches: [[name: '*/master']],
