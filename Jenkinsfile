@@ -1,15 +1,12 @@
 pipeline {
     agent any
-    parameters {
-        choice(choices: "$environment", description: '', name: 'ENVIRONMENT')
-        string(defaultValue: "nimish.mehta@gmail.com",
-                description: 'Nimish',
-                name: 'Nimish Mehta')
-    }
     environment {
         reponame =  "musician-app"
         repourl = "https://github.com:nimishmehta8779/musician-app.git"
     }
+    parameters {
+    }
+
     stages {
         stage ('checkout all branches'){
             steps{
