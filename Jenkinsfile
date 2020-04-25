@@ -23,14 +23,15 @@ pipeline {
                 [credentialsId: 'nimishmehta8779', url: repourl]
             ]
             ])
-            }
-        }
-        stage ('validate ') {
-            steps{
                 dir (reponame) {
                 sh (script: "git rev-parse HEAD")
             }
         }
+        stage ('validate ') {
+            steps{
+                sh (script: "completed"")
+            }
+        }
     }
 }
-}   
+}
