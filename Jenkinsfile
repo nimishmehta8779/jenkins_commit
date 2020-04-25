@@ -38,8 +38,9 @@ pipeline {
                 script{
                     sh '''
                      #!/bin/bash
-                     cd musican-app
+                     cd musician-app
                      echo $pwd
+                     ls -l
                     '''
                 }
             }
