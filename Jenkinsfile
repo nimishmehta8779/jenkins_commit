@@ -6,7 +6,9 @@ pipeline {
     }
     stages {
         stage ('This is a test') {
-            sh 'echo $hostname'
+            steps {
+                sh 'echo $hostname'
+            }
         }
         stage ('checkout all branches'){
             steps{
