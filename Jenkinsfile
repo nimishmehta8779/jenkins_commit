@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         reponame =  "oracle-install-scripts"
-        repourl = "git@github.com/nimishmehta8779/oracle-install-scripts.git"
+        repourl = "https://github.com/nimishmehta8779/oracle-install-scripts.git"
     }
     stages {
         stage ('checkout all branches'){
@@ -20,7 +20,7 @@ pipeline {
                 ],
                 submoduleCfg: [],
                 useRemoteConfigs: [
-                [credentialsId: 'nimishmehta8779', url: repourl]
+                [credentialsId: 'git', url: repourl]
             ]
             ])
                 dir (reponame) {
