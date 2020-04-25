@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         reponame =  "oracle-install-scripts"
-        repourl = "https://github.com:nimishmehta8779/oracle-install-scripts.git"
+        repourl = "git@github.com:nimishmehta8779/oracle-install-scripts.git"
     }
     stages {
         stage ('checkout all branches') {
