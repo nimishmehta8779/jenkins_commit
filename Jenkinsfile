@@ -5,6 +5,13 @@ pipeline {
         repourl = "git@github.com:nimishmehta8779/musician-app.git"
     }
     stages {
+        stages ('creata a directory') {
+            steps {
+                script {
+                    sh "mkdir musician-app"
+                }
+            }
+        }
         stage ('checkout all branches') {
             steps{
             checkout scm:([
@@ -12,7 +19,7 @@ pipeline {
                 branches: [[name: '*/master']],
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [
-                     [$class: 'WipeWorkspace'],
+                    [$class: 'WipeWorkspace'],
                     [$class: 'CloneOption', timeout: 10, noTags: true, reference: reponame],
                     [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame]
                 ],
@@ -31,7 +38,7 @@ pipeline {
                 script{
                     sh '''
                      #!/bin/bash
-                     cd oracle-install-scripts
+                     cd musican-app
                      echo $pwd
                     '''
                 }
