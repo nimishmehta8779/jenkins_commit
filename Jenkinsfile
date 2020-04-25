@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        reponame =  "oracle-install-scripts"
-        repourl = "https://github.com/nimishmehta8779/oracle-install-scripts.git"
+        reponame =  "musician-app"
+        repourl = "git@github.com:nimishmehta8779/musician-app.git"
     }
     stages {
         stage ('checkout all branches'){
@@ -15,8 +15,7 @@ pipeline {
                 branches: [[name: commit]],
                 doGenerateSubModuleConfigurations: false,
                 extensions: [
-                    [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame],
-                    [$class: 'CloneOption', reference: "/opt/${reponame}"]
+                    [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame]
                 ],
                 submoduleCfg: [],
                 useRemoteConfigs: [
