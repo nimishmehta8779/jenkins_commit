@@ -40,7 +40,7 @@ pipeline {
                     sh '''
                      #!/bin/bash
                      cd musician-app
-                     tar cvf ../musician-app.tar{version} .
+                     tar cvf ../musician-app{version}.tar . --exclude=.git
                      cd ..
                      ls -l *.tar                    
                     '''
