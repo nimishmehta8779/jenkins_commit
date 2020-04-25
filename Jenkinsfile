@@ -17,10 +17,10 @@ pipeline {
                     [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame],
                     [$class: 'CloneOption', reference: "/opt/${reponame}"]
                 ],
-            ]
-            submoduleCfg: [],
-            useRemoteConfigs: [
+                submoduleCfg: [],
+                useRemoteConfigs: [
                 [credentialsId: 'nimishmehta8779', url: repourl]
+            ]
             ])
         }
         stage ('validate ') {
