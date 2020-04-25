@@ -15,7 +15,6 @@ pipeline {
         }
         stage ('checkout all branches') {
             steps{
-            agent { label 'master'}
             checkout scm:([
                 $class: 'GitSCM',
                 branches: [[name: '*/master']],
