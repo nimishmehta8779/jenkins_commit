@@ -12,11 +12,12 @@ pipeline {
                 branches: [[name: master]],
                 doGenerateSubModuleConfigurations: false,
                 extensions: [
+                    [$class: 'CleanCheckout'],
                     [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame]
                 ],
                 submoduleCfg: [],
                 useRemoteConfigs: [
-                [credentialsId: 'git', url: repourl]
+                [credentialsId: 'nimishmehta8779/Silicon_123', url: repourl]
             ]
             ])
                 dir (reponame) {
