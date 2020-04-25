@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        reponame =  "musician-app"
-        repourl = "https://github.com:nimishmehta8779/musician-app.git"
+        reponame =  "oracle-install-scripts"
+        repourl = "https://github.com:nimishmehta8779/oracle-install-scripts.git"
     }
     stages {
         stage ('checkout all branches') {
