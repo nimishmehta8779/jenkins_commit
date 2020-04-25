@@ -7,19 +7,29 @@ pipeline {
     stages {
         stage ('checkout all branches') {
             steps{
-            checkout ([
+            checkout scm:([
                 $class: 'GitSCM',
                 branches: [[name: 'origin/master']],
-                doGenerateSubModuleConfigurations: false,
+                doGenerateSubmoduleConfigurations: false,
                 extensions: [
-                    [$class: 'CleanCheckout'],
                     [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame]
                 ],
                 submoduleCfg: [],
-                useRemoteConfigs: [
+                userRemoteConfigs: [
                 [credentialsId: 'git', url: repourl]
             ]
             ])
+        }
+        stage ('create a tar file') {
+            steps {
+                script{
+                    sh '''
+                     #!/bin/bash
+                     cd musician-app
+                     echo $pwd
+                    ''''
+                }
+            }
         }
     }
 }
