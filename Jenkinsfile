@@ -12,6 +12,7 @@ pipeline {
                 branches: [[name: '*/master']],
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [
+                     [$class: 'WipeWorkspace'],
                     [$class: 'CloneOption', timeout: 10, noTags: true, reference: reponame],
                     [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame]
                 ],
