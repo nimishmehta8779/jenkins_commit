@@ -5,9 +5,6 @@ def date = new Date()
 
 pipeline {
     agent any
-    environment {
-        date = 
-    }
     stages {
         stage ('creata a directory') {
             steps {
