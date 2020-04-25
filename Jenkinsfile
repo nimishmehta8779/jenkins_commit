@@ -20,13 +20,13 @@ pipeline {
                 [credentialsId: 'git', url: repourl]
             ]
             ])
+            dir(reponame) {
+                sh(script: "git rev-parse HEAD")
+            }
         }
         }
         stage ('create a tar file') {
             steps {
-                dir(reponame) {
-                    sh(script: "git rev-parse HEAD")
-                }
                 script{
                     sh '''
                      #!/bin/bash
