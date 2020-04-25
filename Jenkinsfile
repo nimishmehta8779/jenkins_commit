@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     environment {
         reponame =  "musician-app"
         repourl = "git@github.com:nimishmehta8779/musician-app.git"
