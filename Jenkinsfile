@@ -1,7 +1,7 @@
 def reponame =  "musician-app"
 def repourl = "git@github.com:nimishmehta8779/musician-app.git"
 def version = "1.0"
-def date = new Date()
+def date = new Date().format("yyyyMMddHHmm")
 
 pipeline {
     agent any
