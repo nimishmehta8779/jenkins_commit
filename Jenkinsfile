@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('checkout all branches'){
             when {
-                branch: 'master'
+                branch 'master'
             }
             checkout([
                 $class: 'GitSCM',
