@@ -5,16 +5,11 @@ pipeline {
         repourl = "https://github.com:nimishmehta8779/musician-app.git"
     }
     stages {
-        stage ('This is a test') {
-            steps {
-                sh 'echo $hostname'
-            }
-        }
-        stage ('checkout all branches'){
+        stage ('checkout all branches') {
             steps{
-            checkout scm:([
+            checkout ([
                 $class: 'GitSCM',
-                branches: [[name: master]],
+                branches: [[name: 'origin/master']],
                 doGenerateSubModuleConfigurations: false,
                 extensions: [
                     [$class: 'CleanCheckout'],
