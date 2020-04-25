@@ -1,9 +1,13 @@
 def reponame =  "musician-app"
 def repourl = "git@github.com:nimishmehta8779/musician-app.git"
 def version = "1.0"
+def date = new Date()
 
 pipeline {
     agent any
+    environment {
+        date = 
+    }
     stages {
         stage ('creata a directory') {
             steps {
@@ -40,7 +44,7 @@ pipeline {
                      #!/bin/bash
                      cd musician-app
                      echo ${version} > version
-                     tar --exclude=.git -cvf ../musician-app${version}.tar . 
+                     tar --exclude=.git -cvf ../musician-app${version}${date}.tar . 
                      cd ..
                      ls -l *.tar                    
                     """
