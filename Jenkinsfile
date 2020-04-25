@@ -1,6 +1,6 @@
 def reponame =  "musician-app"
 def repourl = "git@github.com:nimishmehta8779/musician-app.git"
-def varsion = "1.0"
+def version = "1.0"
 
 pipeline {
     agent any
