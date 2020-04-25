@@ -3,6 +3,8 @@ pipeline {
     environment {
         reponame =  "musician-app"
         repourl = "git@github.com:nimishmehta8779/musician-app.git"
+        varsion = "1.0"
+        date = LocalDateTime.now()
     }
     stages {
         stage ('creata a directory') {
@@ -39,8 +41,9 @@ pipeline {
                     sh '''
                      #!/bin/bash
                      cd musician-app
-                     echo $pwd
-                     ls -l
+                     tar cvf ../musician-app.tar{version}{date} .
+                     cd ..
+                     ls -l *.tar                    
                     '''
                 }
             }
