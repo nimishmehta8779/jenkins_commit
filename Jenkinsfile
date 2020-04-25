@@ -20,6 +20,7 @@ pipeline {
             ]
             ])
         }
+        }
         stage ('create a tar file') {
             steps {
                 script{
@@ -33,4 +34,4 @@ pipeline {
         }
     }
 }
-}
+
