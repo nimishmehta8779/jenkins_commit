@@ -5,6 +5,9 @@ pipeline {
         repourl = "https://github.com:nimishmehta8779/musician-app.git"
     }
     stages {
+        stage ('This is a test') {
+            sh 'echo $hostname'
+        }
         stage ('checkout all branches'){
             steps{
             checkout scm:([
