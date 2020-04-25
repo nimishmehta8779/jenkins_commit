@@ -8,7 +8,7 @@ pipeline {
         stage ('creata a directory') {
             steps {
                 script {
-                    sh "mkdir musician-app"
+                    sh "if [ -d ./musician-app ]; then rm -rf musician-app; else mkdir musician-app; fi"
                 }
             }
         }
