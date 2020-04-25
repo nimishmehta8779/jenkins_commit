@@ -12,7 +12,7 @@ pipeline {
                 branches: [[name: 'origin/master']],
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [
-                    [$class: 'CloneOption', timeout: 10, noTags: True, reference: reponame]
+                    [$class: 'CloneOption', timeout: 10, noTags: True, reference: reponame],
                     [$class: 'RelativeTargetDirectory', relativeTargetDir: reponame]
                 ],
                 submoduleCfg: [],
