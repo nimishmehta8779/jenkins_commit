@@ -1,13 +1,12 @@
-@Library("nimishmehta8779/sharedLibrary") _
-
+//@Library("nimishmehta8779/sharedLibrary") _
 pipeline{
     agent any
     stages{
         stage("A"){
             steps{
                 scripts {
-                    log.info 'Starting'
-                    log.warning 'Nothing to do here'
+                    echo 'Starting'
+                    echo 'Nothing to do here'
                 }
             }
             post{
